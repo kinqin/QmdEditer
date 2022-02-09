@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>TitleButton.qml</file>
+        <file>TitleBar.qml</file>
+        <file>TitleToolButton.qml</file>
+        <file>Sidebar.qml</file>
+        <file>CenterInputWidget.qml</file>
+        <file>PreviewWidget.qml</file>
+        <file>CustomToolBar.qml</file>
+        <file>CustomMessageDialog.qml</file>
+        <file>SettingsPage.qml</file>
+        <file>SettingLabel.qml</file>
+    </qresource>
+</RCC>

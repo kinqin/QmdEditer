@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="3rdparty/markdown.css">
+    <script src="markdown-it/markdown-it.js"></script>
+    <script src="markdown-it/markdown-it-footnote.js"></script>
+    <script src="qwebchannel.js"></script>
+</head>
+<body class="markdown-body">
+  <div id="placeholder"></div>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
+  });
+  </script>
+  <script>
+  'use strict';
+
+  var placeholder = document.getElementById('placeholder');
+
+  var updateText = function(text) {
+        var md = markdownit({
+            html: true,
+            breaks: false,
+            linkify: true
+        }).use(markdownitFootnote);
+        var mdHtml = md.render(text);
+        placeholder.innerHTML ="<body class=\"markdown\">"+ mdHtml+"</body>";
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+  }
+
+  new QWebChannel(qt.webChannelTransport,
+    function(channel) {
+      var content = channel.objects.content;
+      updateText(content.text);
+      content.textChanged.connect(updateText);
+    }
+  );
+  </script>
+</body>
+</html>

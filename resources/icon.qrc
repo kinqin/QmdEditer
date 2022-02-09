@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icon/restore.png</file>
+        <file>icon/min.png</file>
+        <file>icon/max.png</file>
+        <file>icon/close.png</file>
+        <file>icon/sider.png</file>
+        <file>icon/preview.png</file>
+        <file>icon/open_folder.png</file>
+        <file>icon/open.png</file>
+        <file>icon/new_folder.png</file>
+        <file>icon/new.png</file>
+        <file>icon/folder.png</file>
+        <file>icon/file.png</file>
+        <file>icon/refresh.png</file>
+        <file>icon/settings.png</file>
+    </qresource>
+</RCC>
